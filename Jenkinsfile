@@ -5,9 +5,9 @@ node{
         ])
     ])
 
-//     stage("Git Clone"){
-//         git url: 'https://github.com/shamal112mn/simple-site.git'
-//     }
+    stage("Git Clone"){
+        git url: 'https://github.com/shamal112mn/simple-webpage.git'
+    }
 
     /* groovylint-disable-next-line LineLength */
     withCredentials([sshUserPrivateKey(credentialsId: 'master_ssh_keys', keyFileVariable: 'SSH_KEY', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) 
