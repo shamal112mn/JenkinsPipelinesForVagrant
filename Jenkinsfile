@@ -21,7 +21,7 @@ node{
        
        stage('Move Files'){
             sh '''
-            scp -r -i $SSH_KEY * $SSH_USERNAME@${node_ip}:/tmp
+            scp -r -i $SSH_KEY index.html $SSH_USERNAME@${node_ip}:/tmp
             ssh -o StrictHostKeyChecking=false -i $SSH_KEY $SSH_USERNAME@${node_ip} sudo cp /tmp/index.html /var/www/html/  
             ssh -o StrictHostKeyChecking=false -i $SSH_KEY $SSH_USERNAME@${node_ip} sudo chown -R 1000 /var/www/html
             
