@@ -29,7 +29,7 @@ node{
         }
         
         
-        stage('Start Nginx'){
+        stage('Deploy to Nginx'){
             /* groovylint-disable-next-line LineLength */
             sh 'ssh -o StrictHostKeyChecking=false -i $SSH_KEY $SSH_USERNAME@${node_ip} "sudo systemctl start nginx"'
         }
