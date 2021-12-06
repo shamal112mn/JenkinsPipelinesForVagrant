@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t shamal317mn/simple-webpage .'
+        sh 'docker build -t shamal317mn/simple-webpage Simple-Webpage/'
       }
     }
     stage('Login') {
