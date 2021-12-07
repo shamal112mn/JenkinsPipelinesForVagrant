@@ -16,8 +16,9 @@ pipeline{
     stages{
         stage("Build"){
             steps{
+
 				script{
-					print $name call(lname)
+					print( "${name  }" + call(lname))
 				}
             }
         }
