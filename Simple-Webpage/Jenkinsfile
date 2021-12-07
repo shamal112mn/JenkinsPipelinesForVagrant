@@ -8,7 +8,7 @@ node{
     
 
     stage("Git Clone"){
-        git url: 'https://github.com/shamal112mn/JenkinsPipelinesForVagrant.git'
+      //  git url: 'https://github.com/shamal112mn/JenkinsPipelinesForVagrant.git'
     }
 
     /* groovylint-disable-next-line LineLength */
