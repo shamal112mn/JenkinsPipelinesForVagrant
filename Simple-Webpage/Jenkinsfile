@@ -5,12 +5,10 @@ node{
         ])
     ])
 
-    options {
-        checkoutToSubdirectory('Simple-Webpage')
-    }
+    
 
     stage("Git Clone"){
-       // git url: 'https://github.com/shamal112mn/JenkinsPipelinesForVagrant.git'
+        git url: 'https://github.com/shamal112mn/JenkinsPipelinesForVagrant.git'
     }
 
     /* groovylint-disable-next-line LineLength */
@@ -25,8 +23,8 @@ node{
        
        stage('Move Files'){
             sh '''
-            scp -r -i $SSH_KEY index.html $SSH_USERNAME@${node_ip}:/tmp
-            # scp -r -i $SSH_KEY Simple-Webpage/index.html $SSH_USERNAME@${node_ip}:/tmp
+             
+            scp -r -i $SSH_KEY Simple-Webpage/index.html $SSH_USERNAME@${node_ip}:/tmp
             ssh -o StrictHostKeyChecking=false -i $SSH_KEY $SSH_USERNAME@${node_ip} sudo cp /tmp/index.html /var/www/html/  
             ssh -o StrictHostKeyChecking=false -i $SSH_KEY $SSH_USERNAME@${node_ip} sudo chown -R 1000 /var/www/html
             
