@@ -18,7 +18,7 @@ pipeline{
             steps{
 
 				script{
-					print( "${name  }" + call(lname))
+					print( "${fname  }" + call(lname))
 				}
             }
         }
