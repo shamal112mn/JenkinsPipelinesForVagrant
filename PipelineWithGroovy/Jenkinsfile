@@ -19,7 +19,7 @@ pipeline{
 
                 sh ' echo $fname'
 				script{
-					callLastname(lname)
+					print("" + callLastname(lname))
 				}
             }
         }
