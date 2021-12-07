@@ -1,6 +1,6 @@
 def lname = "Jonson"
 
-def call(lname){
+def callLastname(lname){
 	echo lname
 }
 
@@ -19,7 +19,7 @@ pipeline{
 
                 sh ' echo $fname'
 				script{
-					call(lname)
+					callLastname(lname)
 				}
             }
         }
