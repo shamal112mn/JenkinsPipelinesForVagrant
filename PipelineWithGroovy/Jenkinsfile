@@ -1,7 +1,7 @@
 def lname = "Jonson"
 
 def callLastname(lname){
-	echo lname
+	print(lname)
 }
 
 properties([
