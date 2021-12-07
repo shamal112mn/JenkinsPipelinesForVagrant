@@ -1,0 +1,25 @@
+def lname = "Jonson"
+
+def call(lname){
+	echo lname
+}
+
+properties([
+    parameters([
+        choice(choices: ['Peter', 'John', 'Mary', 'Cart'], 
+        description: 'first name', name: 'fname')
+        ])
+    ])
+
+pipeline{
+    agent any
+    stages{
+        stage("Build"){
+            steps{
+				script{
+					print $name call(lname)
+				}
+            }
+        }
+    }
+}
