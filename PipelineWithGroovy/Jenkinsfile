@@ -17,8 +17,9 @@ pipeline{
         stage("Build"){
             steps{
 
+                sh ' echo $fname'
 				script{
-					print( "$fname  " + call(lname))
+					call(lname)
 				}
             }
         }
