@@ -1,0 +1,27 @@
+def lname = "Jonson"
+
+def callLastname(lname){
+	print(lname)
+}
+
+properties([
+    parameters([
+        choice(choices: ['Peter', 'John', 'Mary', 'Cart'], 
+        description: 'first name', name: 'fname')
+        ])
+    ])
+
+pipeline{
+    agent any
+    stages{
+        stage("Build"){
+            steps{
+
+                sh ' echo $fname'
+				script{
+					print("${fname}   " + callLastname(lname))
+				}
+            }
+        }
+    }
+}
